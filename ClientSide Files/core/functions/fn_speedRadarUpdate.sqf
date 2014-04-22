@@ -1,0 +1,10 @@
+private["_ui","_player","_speed","_isVehicle","_license","_plate","_dbInfo","_money"];
+disableSerialization;
+_ui = uiNameSpace getVariable ["Life_Speed_Radar",displayNull];
+if(isNull _ui) then {[] call life_fnc_speedRadar;};
+_player = cursorTarget;
+_money = _ui displayCtrl 2015;
+_license = _player getVariable["vehicle_info_owners",[]];
+_plate = _license select 2;
+_dbInfo = _license select 1;
+_money ctrlSetStructuredText parseText format["<t size='1px'>%2: %1</t>",[speed _player] call life_fnc_numberText, (_license select 0) select 2];

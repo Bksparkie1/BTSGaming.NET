@@ -12,6 +12,7 @@ _shift = _this select 2;
 _ctrlKey = _this select 3;
 _alt = _this select 4;
 _speed = speed cursorTarget;
+_tvs = actionKeys "TacticalView";
 _handled = false;
 
 _interactionKey = if(count (actionKeys "User10") == 0) then {219} else {(actionKeys "User10") select 0};
@@ -116,6 +117,7 @@ switch (_code) do
 		if(!_alt && !_ctrlKey && !dialog) then
 		{
 			[] call life_fnc_p_openMenu;
+			_handled = true;
 		};
 	};
 	//V Key
@@ -194,6 +196,13 @@ switch (_code) do
 			};
 		};
 	};
+};
+
+if (_code in _tvs) then
+{
+	_handled = true;
+	titleText ["ERROR: Commander view is disabled.","black"];
+	titleFadeOut 10; 
 };
 
 _handled;

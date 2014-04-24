@@ -42,6 +42,8 @@ switch ((typeOf _vehicle)) do
 	case "I_Boat_Armed_01_minigun_F": {_weight = 175;};
 	case "B_G_Boat_Transport_01_F": {_weight = 45;};
 	case "B_Boat_Transport_01_F": {_weight = 45;};
+	case "Land_Box_AmmoOld_F": {_weight = 700;};
+    case "B_supplyCrate_F": {_weight = 1000;};
 };
 
 if(isNil "_used") then {_used = 0};

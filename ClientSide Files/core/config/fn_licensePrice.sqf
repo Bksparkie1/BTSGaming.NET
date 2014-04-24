@@ -33,4 +33,5 @@ switch (_type) do
 	case "iron": {9500};
 	case "copper": {8000};
 	case "cement": {6500};
+	 case "home": {100000}; //Housing License Cost
 };

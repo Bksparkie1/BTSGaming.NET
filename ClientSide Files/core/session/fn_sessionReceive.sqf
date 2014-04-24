@@ -71,6 +71,8 @@ switch (playerSide) do
 		civ_gear = (_session select 8);
 		[] spawn life_fnc_civLoadGear;
 		__CONST__(life_coplevel,0);
+		life_houses = (_session select 9);
+        life_houses_markers = [];
 	};
 	case resistance:
 	{

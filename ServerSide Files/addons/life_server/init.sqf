@@ -55,6 +55,7 @@ publicVariable "TON_fnc_addVehicle2Chain";
 publicVariable "life_fnc_fedSuccess";
 
 [] spawn TON_fnc_federalUpdate;
+[] execVM "\life_server\initHousing.sqf";
 
 [] spawn
 {

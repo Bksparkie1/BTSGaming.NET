@@ -20,7 +20,10 @@ switch (true) do
 			player setFatigue 0;
 		};
 	};
-	
+	case (_item in ["storage1","storage2"]):
+    {
+        [_item] call life_fnc_placeStorage;
+    };
 	case (_item == "redgull"):
 	{
 		if(([false,_item,1] call life_fnc_handleInv)) then

@@ -56,6 +56,11 @@ switch (playerSide) do
 	};
 };
 
+_handle = [] spawn compile PreprocessFileLineNumbers "core\config_housing.sqf";
+diag_log "::Life Client:: Housing Variables";
+waitUntil {scriptDone _handle};
+diag_log "::Life Client:: Housing Variables initialized";
+
 player setVariable["restrained",false,true];
 player setVariable["Escorting",false,true];
 player setVariable["transporting",false,true];

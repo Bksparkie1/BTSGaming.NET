@@ -36,7 +36,22 @@ class CfgFunctions
 			class mresString {};
 		};
 	};
-	
+	 class BRUUUDIS_System {
+
+        tag = "BRUUUDIS";       
+        class Bruuudis
+        {
+            file = "\life_server\core\bruuudis";
+            class add {};
+            class query {};
+            class deleteHouse {};
+            class insertHouse {};
+            class queryHouses {};
+            class queryPlayerHouses {};
+            class updateHouseStorage {};
+            class updateHouseWeaponStorage {};
+        };
+    };
 	class Life_System
 	{
 		tag = "life";

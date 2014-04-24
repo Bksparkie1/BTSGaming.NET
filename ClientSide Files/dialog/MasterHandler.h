@@ -22,3 +22,5 @@
 #include "chop_shop.h"
 #include "pInteraction.h"
 #include "speedRadar.hpp"
+#include "trunkHouse.hpp"
+#include "house.hpp"

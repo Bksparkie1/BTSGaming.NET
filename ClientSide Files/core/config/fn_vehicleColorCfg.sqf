@@ -35,17 +35,7 @@ switch (_vehicle) do
 	{
 		_ret = 
 		[
-<<<<<<< HEAD
-			["\A3\soft_F\Offroad_01\Data\offroad_01_ext_co.paa", "civ"], 
-			["\A3\soft_F\Offroad_01\Data\offroad_01_ext_BASE01_CO.paa", "civ"],
-			["\A3\soft_F\Offroad_01\Data\offroad_01_ext_BASE02_CO.paa", "civ"],
-			["\A3\soft_F\Offroad_01\Data\offroad_01_ext_BASE03_CO.paa","civ"],
-			["\A3\soft_F\Offroad_01\Data\offroad_01_ext_BASE04_CO.paa","civ"],
-			["\A3\soft_F\Offroad_01\Data\offroad_01_ext_BASE05_CO.paa","civ"],
-			["textures\vehicles\offroad_police.paa","cop"],
-			["#(argb,8,8,3)color(0.6,0.3,0.01,1)","civ"],
-			["\A3\soft_F\Offroad_01\Data\offroad_01_ext_base01_co.paa", "reb"]
-=======
+
 			["Red","civ","\A3\soft_F\Offroad_01\Data\offroad_01_ext_co.paa"], 
 			["Yellow","civ","\A3\soft_F\Offroad_01\Data\offroad_01_ext_BASE01_CO.paa"],
 			["White","civ","\A3\soft_F\Offroad_01\Data\offroad_01_ext_BASE02_CO.paa"],
@@ -55,7 +45,6 @@ switch (_vehicle) do
 			["Black","fed","#(ai,64,64,1)Fresnel(0.3,3)"],
 			["Police","cop","textures\police_offroad.paa"],
 			["Taxi","civ","#(argb,8,8,3)color(0.6,0.3,0.01,1)"]
->>>>>>> origin/Bksparkie1
 		];
 	};
 	

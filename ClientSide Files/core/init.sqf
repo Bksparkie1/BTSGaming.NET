@@ -12,6 +12,11 @@ diag_log "----------------------------------------------------------------------
 waitUntil {!isNull player && player == player}; //Wait till the player is ready
 //Setup initial client core functions
 _handle = [] spawn compile PreprocessFileLineNumbers "core\configuration.sqf";
+_handle = [] spawn compile PreprocessFileLineNumbers "core\config_housing.sqf";
+// _handle = [] execVM "core\config_housing.sqf";
+diag_log "::Life Client:: Housing Variables";
+waitUntil {scriptDone _handle};
+diag_log "::Life Client:: Housing Variables initialized";
 diag_log "::Life Client:: Initialization Variables";
 waitUntil {scriptDone _handle};
 diag_log "::Life Client:: Variables initialized";
@@ -20,9 +25,9 @@ _handle = [] spawn life_fnc_setupEVH;
 diag_log "::Life Client:: Setting up Eventhandlers";
 waitUntil {scriptDone _handle};
 diag_log "::Life Client:: Eventhandlers completed";
-//_handle = [] spawn life_fnc_setupActions;
-//diag_log "::Life Client:: Setting up user actions";
-//waitUntil {scriptDone _handle};
+_handle = [] spawn life_fnc_setupActions;
+diag_log "::Life Client:: Setting up user actions";
+waitUntil {scriptDone _handle};
 diag_log "::Life Client:: User actions completed";
 diag_log "::Life Client:: Waiting for server functions to transfer..";
 waitUntil {(!isNil {clientGangLeader})};
@@ -56,10 +61,6 @@ switch (playerSide) do
 	};
 };
 
-_handle = [] spawn compile PreprocessFileLineNumbers "core\config_housing.sqf";
-diag_log "::Life Client:: Housing Variables";
-waitUntil {scriptDone _handle};
-diag_log "::Life Client:: Housing Variables initialized";
 
 player setVariable["restrained",false,true];
 player setVariable["Escorting",false,true];
@@ -91,4 +92,4 @@ life_fnc_moveIn = compileFinal
 
 setPlayerRespawnTime life_respawn_timer; //Set our default respawn time.
 [] execVM "core\monitor_esc.sqf";
-[] call life_fnc_setupActions;
+// [] call life_fnc_setupActions;

@@ -64,6 +64,12 @@ switch (true) do
 		hint "You have paid your bail and are now free.";
 		serv_wanted_remove = [player];
 		player setPos (getMarkerPos "jail_release");
+		if(playerSide == resistance) then
+		{
+			player setPos (getMarkerPos "jail_release_reb");
+		} else {
+			player setPos (getMarkerPos "jail_release");
+		};
 		[[getPlayerUID player],"life_fnc_wantedRemove",false,false] spawn life_fnc_MP;
 		[1,false] call life_fnc_sessionHandle;
 	};
@@ -82,6 +88,12 @@ switch (true) do
 		hint "You have served your time in jail and have been released.";
 		[[getPlayerUID player],"life_fnc_wantedRemove",false,false] spawn life_fnc_MP;
 		player setPos (getMarkerPos "jail_release");
+		if(playerSide == resistance) then
+		{
+			player setPos (getMarkerPos "jail_release_reb");
+		} else {
+			player setPos (getMarkerPos "jail_release");
+		};
 		[1,false] call life_fnc_sessionHandle;
 	};
 };

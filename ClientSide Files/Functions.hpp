@@ -192,6 +192,12 @@ class Life_Client_Core
 		class removeLicenses {};
 		class zoneCreator {};
 	};
+	class Resistance
+	{
+		file = "core\resistance";
+		class resFetchGear {};
+		class resLoadGear {};
+	};
 	
 	class Vehicle
 	{

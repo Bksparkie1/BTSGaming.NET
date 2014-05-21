@@ -29,3 +29,19 @@ player addRating 9999999;
 
 [] call life_fnc_zoneCreator;
 [] call life_fnc_initHouses;
+
+[] spawn 
+{
+	while {false} do
+	{
+		hint format["%1 %2 %3 %4 %5 %6 %7",
+		(!isNull cursorTarget),
+		((player distance cursorTarget) < 20),
+		(cursorTarget isKindOf "House"),
+		(speed cursorTarget < 2),
+		(count (cursorTarget getVariable["containers", []]) > 0),
+		(license_civ_home),
+		((getPlayerUID player) in (cursorTarget getVariable["life_homeOwners", []]) || ((cursorTarget getVariable["storage_locked", 1]) == 0))];
+		sleep 0.5;
+	};
+};
